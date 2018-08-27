@@ -169,7 +169,7 @@ public class KeyboardPatch {
                     diff -= navigationBarHeight;
                 }
                 if (keyboardHeight != keyboardHeightPrevious) {
-                    mContentView.setPadding(paddingLeft, paddingTop, paddingRight, diff + paddingBottom);
+                    mContentView.setPadding(paddingLeft, paddingTop, paddingRight, (mBarParams.keyboardEnable ? Math.max(0,diff) : diff) + paddingBottom);
                     keyboardHeightPrevious = keyboardHeight;
                     if (mBarParams.onKeyboardListener != null) {
                         if (keyboardHeight > navigationBarHeight)
